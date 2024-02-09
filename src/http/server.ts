@@ -4,6 +4,8 @@ import cookie from "@fastify/cookie";
 import { createPoll } from "./routes/create-poll";
 import { getPoll } from "./routes/get-poll";
 import { VoteOnPoll } from "./routes/vote-on-poll";
+import { pollResults } from "./ws/poll-results";
+import websocket from "@fastify/websocket";
 
 //GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS
 
@@ -17,6 +19,8 @@ app.register(cookie, {
 app.register(createPoll);
 app.register(getPoll);
 app.register(VoteOnPoll);
+app.register(websocket);
+app.register(pollResults);
 
 //cria enquete
 
